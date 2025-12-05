@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>O-AI Studio - Image to Prompt</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        /* Rich dark gradient background fallback */
+        background: #020617;
+        color: #e2e8f0; /* Slate 200 */
+        min-height: 100vh;
+      }
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #020617; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #334155; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #475569; 
+      }
+
+      /* --- CUSTOM ANIMATIONS --- */
+      @keyframes blob {
+        0% { transform: translate(0px, 0px) scale(1); }
+        33% { transform: translate(30px, -50px) scale(1.1); }
+        66% { transform: translate(-20px, 20px) scale(0.9); }
+        100% { transform: translate(0px, 0px) scale(1); }
+      }
+      .animate-blob {
+        animation: blob 7s infinite;
+      }
+      .animation-delay-2000 {
+        animation-delay: 2s;
+      }
+      .animation-delay-4000 {
+        animation-delay: 4s;
+      }
+
+      @keyframes shimmer {
+        0% { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
+      }
+      .animate-shimmer {
+        animation: shimmer 3s linear infinite;
+      }
+
+      /* Updated Neon Pulse to match Purple/Blue theme */
+      @keyframes neon-pulse {
+        0%, 100% { box-shadow: 0 0 5px rgba(124, 58, 237, 0.5), 0 0 10px rgba(59, 130, 246, 0.3); }
+        50% { box-shadow: 0 0 20px rgba(124, 58, 237, 0.8), 0 0 30px rgba(59, 130, 246, 0.6); }
+      }
+      .animate-neon-pulse {
+        animation: neon-pulse 3s infinite;
+      }
+
+      @keyframes border-flow {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      .bg-gradient-flow {
+        background-size: 200% 200%;
+        animation: border-flow 4s ease infinite;
+      }
+
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      /* Animated Deep Background - Black & Purple */
+      @keyframes gradient-bg-move {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      .bg-animated-deep {
+        /* Deep Black, Midnight Blue, and Deep Violet Gradient */
+        background: linear-gradient(-45deg, #000000, #170726, #1e1b4b, #000000, #312e81);
+        background-size: 400% 400%;
+        animation: gradient-bg-move 18s ease infinite;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

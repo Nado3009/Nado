@@ -1,0 +1,5 @@
+{
+  "name": "Nado",
+  "description": "Tải lên hình ảnh mẫu và tạo Prompt chuẩn xác dựa trên các quy tắc tùy chỉnh của bạn bằng Gemini AI.",
+  "requestFramePermissions": []
+}
